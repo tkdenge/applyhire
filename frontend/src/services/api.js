@@ -1,19 +1,52 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api"
+  baseURL: import.meta.env.VITE_API_URL
 });
 
-API.interceptors.request.use((req)=>{
+// ===== Jobs CRUD functions =====
 
-  const token = localStorage.getItem("token");
-
-  if(token){
-    req.headers.Authorization = `Bearer ${token}`;
+// GET all items
+export const getJobs = async () => {
+  try {
+    const res = await API.get("/jobs");
+    return res.data;
+  } catch (err) {
+    console.error(err);
+    throw err;
   }
+};
 
-  return req;
+// POST new item
+export const createJob = async (data) => {
+  try {
+    const res = await API.post("/jobs", data);
+    return res.data;
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+};
 
-});
+// PUT / update item
+export const updateJob = async (jobId, data) => {
+  try {
+    const res = await API.put(`/jobs/${jobId}`, data);
+    return res.data;
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+};
 
+// DELETE item
+export const deleteJob = async (jobId) => {
+  try {
+    const res = await API.delete(`/jobs/${jobId}`);
+    return res.data;
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+};
 export default API;

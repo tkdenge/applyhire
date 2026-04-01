@@ -1,7 +1,8 @@
 import JobForm from "../components/JobForm";
 import JobList from "../components/JobList";
 import { useEffect, useState } from "react";
-import API from "../services/api";
+import { getJobs } from "../services/api";
+
 
 function Dashboard() {
 
@@ -9,17 +10,27 @@ function Dashboard() {
   
 
   const fetchJobs = async () => {
-
-    const res = await API.get("/jobs");
-
-    setJobs(res.data);
-
+    try {
+      const data = await getJobs(); // data = array of jobs
+      console.log("API response:", data);
+      setJobs(data); 
+    } catch (err) {
+      console.error(err);
+    }
   };
 
-  useEffect(()=>{
-    fetchJobs();
-  },[]);
+  useEffect(() => {
+    const loadJobs = async () => {
+    try {
+      const data = await getJobs();
+      setJobs(data);
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
+  loadJobs();
+  }, []);
   return (
 
     <div>

@@ -1,20 +1,20 @@
-import API from "../services/api";
+import { deleteJob, updateJob } from "../services/api";
 
 function JobList({ jobs, refreshJobs }) {
 
-  const deleteJob = async (id) => {
-    await API.delete(`/jobs/${id}`);
+  const HandleDeleteJob = async (id) => {
+    await deleteJob(id);
     refreshJobs();
   };
 
-   const updateStatus = async (id, status) => {
-    await API.put(`/jobs/${id}`, { status });
+  const handleUpdateStatus = async (id, status) => {
+    await updateJob(id,{ status });
     refreshJobs();
   };
 
   return (
     <div>
-      {jobs.map((job) => (
+      {Array.isArray(jobs) && jobs.map(job => (
         <div key={job._id} style={{border:"1px solid black", margin:"10px", padding:"10px"}}>
 
           <h3>{job.company}</h3>
@@ -24,7 +24,7 @@ function JobList({ jobs, refreshJobs }) {
           <select
             value={job.status}
             onChange={(e) =>
-              updateStatus(job._id, e.target.value)
+              handleUpdateStatus(job._id, e.target.value)
             }
           >
             <option>Applied</option>
@@ -35,7 +35,7 @@ function JobList({ jobs, refreshJobs }) {
 
           <br /><br />
 
-          <button onClick={() => deleteJob(job._id)}>
+          <button onClick={() => HandleDeleteJob(job._id)}>
             Delete
           </button>
 

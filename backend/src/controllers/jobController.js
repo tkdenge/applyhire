@@ -2,7 +2,7 @@ const Job = require("../models/Job");
 
 exports.getJobs = async (req, res) => {
 
-  const jobs = await Job.find({ user: req.userId });
+  const jobs = await Job.find();
 
   res.json(jobs);
 
@@ -10,25 +10,11 @@ exports.getJobs = async (req, res) => {
 
 exports.createJob = async (req, res) => {
 
-  const job = new Job({
-    ...req.body,
-    user: req.userId
-  });
+  const job = new Job(req.body);
 
   const saved = await job.save();
 
   res.json(saved);
-
-};
-
-exports.deleteJob = async (req, res) => {
-
-  try {
-      await Job.findByIdAndDelete(req.params.id);
-      res.json({ message: "Job deleted" });
-    } catch (error) {
-      res.status(500).json({ error: error.message });
-    }
 
 };
 
@@ -46,3 +32,14 @@ exports.updateJob = async (req, res) => {
       res.status(500).json({ error: error.message });
     }
 };
+
+exports.deleteJob = async (req, res) => {
+
+  try {
+      await Job.findByIdAndDelete(req.params.id);
+      res.json({ message: "Job deleted" });
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+};
+

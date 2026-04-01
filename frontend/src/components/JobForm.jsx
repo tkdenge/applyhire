@@ -1,14 +1,14 @@
 import { useState } from "react";
-import API from "../services/api";
+import { createJob } from "../services/api";
 
 function JobForm({ refreshJobs }) {
   const [company, setCompany] = useState("");
   const [role, setRole] = useState("");
 
-  const submitJob = async (e) => {
+  const HandleCreateJob = async (e) => {
     e.preventDefault();
 
-    await API.post("/jobs", {
+    await createJob({
       company,
       role
     });
@@ -20,7 +20,7 @@ function JobForm({ refreshJobs }) {
   };
 
   return (
-    <form onSubmit={submitJob}>
+    <form onSubmit={HandleCreateJob}>
       <input
         placeholder="Company"
         value={company}
