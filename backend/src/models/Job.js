@@ -11,14 +11,15 @@ const jobSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    enum: ["Applied", "Interview", "Offer", "Rejected"],
+    enum: ["Applied","Shortlisted", "Interview", "Offer", "Rejected"],
     default: "Applied"
   },
   dateApplied: {
     type: Date,
     default: Date.now
   },
-  notes: String
-});
+  notes: String,
+  user: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+}, { timestamps: true });
 
 module.exports = mongoose.model("Job", jobSchema);

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createJob } from "../services/api";
+import { createJob } from "../utils/api";
 
 function JobForm({ refreshJobs }) {
   const [company, setCompany] = useState("");

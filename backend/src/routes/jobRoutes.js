@@ -8,13 +8,15 @@ const {
   updateJob
 } = require("../controllers/jobController");
 
-router.get("/", getJobs);
+const {protect} = require("../middleware/authMiddleware.js");
 
-router.post("/", createJob);
+router.get("/", protect, getJobs);
 
-router.put("/:id", updateJob);
+router.post("/", protect, createJob);
 
-router.delete("/:id", deleteJob);
+router.put("/:id", protect, updateJob);
+
+router.delete("/:id", protect, deleteJob);
 
 
 module.exports = router;

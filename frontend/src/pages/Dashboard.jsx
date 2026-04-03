@@ -1,13 +1,20 @@
 import JobForm from "../components/JobForm";
 import JobList from "../components/JobList";
 import { useEffect, useState } from "react";
-import { getJobs } from "../services/api";
+import { getJobs } from "../utils/api";
+import { useNavigate } from "react-router-dom";
 
 
 function Dashboard() {
 
   const [jobs,setJobs] = useState([]);
   
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    navigate("/login");
+  }
 
   const fetchJobs = async () => {
     try {
@@ -36,6 +43,8 @@ function Dashboard() {
     <div>
 
       <h1>Job Dashboard</h1>
+
+      <button onClick={handleLogout}>Logout</button>
 
       <JobForm refreshJobs={fetchJobs}/>
 

@@ -6,6 +6,27 @@ const API = axios.create({
   baseURL: BASE_URL,
 });
 
+// Attach token automatically
+API.interceptors.request.use((config) => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    config.headers.Authorization = token;
+  }
+  return config;
+});
+
+// ===== AUTH =====
+export const signupUser = async (data) => {
+  const res = await API.post("/auth/register", data);
+  return res.data;
+};
+
+export const loginUser = async (data) => {
+  const res = await API.post("/auth/login", data);
+  return res.data;
+};
+
+
 // ===== Jobs CRUD functions =====
 
 // GET all items

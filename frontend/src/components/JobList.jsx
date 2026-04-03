@@ -1,4 +1,4 @@
-import { deleteJob, updateJob } from "../services/api";
+import { deleteJob, updateJob } from "../utils/api";
 
 function JobList({ jobs, refreshJobs }) {
 
