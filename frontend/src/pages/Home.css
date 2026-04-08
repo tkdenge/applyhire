@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap');
+
+/* Global / body */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora', sans-serif;
+    background-color: #1d1b1b;
+    color: #111;
+}
+
+/* Homepage container */
+.homepage {
+    display: flex;
+    height: 100vh;
+    background-color: #fff;
+}
+
+/* Text section */
+.text-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 150px;
+    z-index: 2;
+}
+
+.text-container h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.text-container p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.text-container button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    margin: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.text-container button:hover {
+    background-color: #333;
+}
+
+/* Image section */
+.image-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.image-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45%; /* controls fade width */
+    height: 100%;
+    
+    background: linear-gradient(
+        to right,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0.9) 20%,
+        rgba(255, 255, 255, 0.6) 40%,
+        rgba(255, 255, 255, 0.2) 70%,
+        rgba(255, 255, 255, 0) 100%
+    );
+
+    z-index: 1;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background-color: #f8f8f8;
+    position: relative;
+    bottom: 0;
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: #111;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .homepage {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .text-container, .image-container {
+        flex: none;
+        width: 100%;
+        padding: 30px 20px;
+        background: none;
+    }
+
+    .text-container h1 {
+        font-size: 2rem;
+    }
+
+    .text-container p {
+        font-size: 1rem;
+    }
+
+    .image-container img {
+        height: auto;
+    }
+}

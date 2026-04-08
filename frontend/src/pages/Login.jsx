@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { loginUser } from "../utils/api";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import logo from "../../public/Artboard 1.svg"
+import './Login.css';
 
 const Login = () => {
   const [form, setForm] = useState({
@@ -34,13 +37,26 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
-        <input name="email" type="email" placeholder="Email" onChange={handleChange} required />
-        <input name="password" type="password" placeholder="Password" onChange={handleChange} required />
-        <button type="submit">Login</button>
-      </form>
+    <div className="login-page">
+      <div className="login-card">
+        <div>
+          <a href="/">
+            <img src={logo} width="250px" alt="" />
+          </a>
+        </div>
+        <h2>Login</h2>
+        <form onSubmit={handleSubmit} className="login-form">
+          <label for="email">Email</label>
+          <input name="email" type="email" id="email" placeholder="Enter your email" onChange={handleChange} required />
+          <label for="password">Password</label>
+          <input name="password" type="password" id="password "placeholder="Enter your password" onChange={handleChange} required />
+          <button type="submit">Login</button>
+        </form>
+
+        <div className="login-footer">
+          <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+        </div>  
+      </div>
     </div>
   );
 };
