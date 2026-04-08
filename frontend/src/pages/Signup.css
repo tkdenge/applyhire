@@ -1,34 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&display=swap');
 
 /* Page */
 .signup-page {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Sora', sans-serif;
-    background-image: url("../../public/auth-bg.jpg");
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("/auth-bg.jpg") center/cover no-repeat;
 }
 
-/* Card */
+/* Card container */
 .signup-card {
-    width: 100%;
-    max-width: 400px;
-    padding: 40px;
-    border-radius:15px;
-    background-color: #ffffff;
-    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  border-radius:15px;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  margin: 0 25px;
 }
 
-/* Heading */
+.signup-card img{
+  width: 150px;
+}
+
+/* Title */
 .signup-card h2 {
-    margin-bottom: 30px;
+    margin:30px 0;
     font-size: 1.8rem;
 }
 
 .signup-card p {
-    margin-bottom: 25px;
     font-size: 0.95rem;
     color: #202020;
 }
@@ -59,14 +64,13 @@
 .signup-form button {
     padding: 12px;
     border: none;
-    border-radius: 8px;
+    border-radius: 15px;
     background-color: #111;
     color: #fff;
     font-size: 1rem;
     cursor: pointer;
     transition: 0.2s ease;
-    width: 50%;
-    margin: 0px 25%;
+    width: 100%;
 }
 
 .signup-form button:hover{
@@ -91,9 +95,5 @@
 
 /* Responsive */
 @media (max-width: 480px) {
-    .signup-card {
-        padding: 25px;
-        margin: 0 25px;
-    }
 
 }

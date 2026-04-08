@@ -44,16 +44,17 @@ const Signup = () => {
       <div className="signup-card">
         <div>
           <a href="/">
-            <img src={logo} width="150px" alt="" />
+            <img src={logo} alt="" />
           </a>
         </div>
         <h2>Sign up</h2>
+
         <form onSubmit={handleSubmit} className="signup-form">
-          <label for="name">First name</label>
+          <label htmlFor="name">First name</label>
           <input name="name" type="name" placeholder="Enter your first name" id="name" onChange={handleChange} required />
-          <label for="email">Email</label>
+          <label htmlFor="email">Email</label>
           <input name="email" type="email" id="email" placeholder="Enter your email" onChange={handleChange} required />
-          <label for="password">Password</label>
+          <label htmlFor="password">Password</label>
           <input name="password" type="password" id="password" placeholder="Enter your password" onChange={handleChange} required />
           <button type="submit">Sign up</button>
         </form>

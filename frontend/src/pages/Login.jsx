@@ -41,15 +41,16 @@ const Login = () => {
       <div className="login-card">
         <div>
           <a href="/">
-            <img src={logo} width="150px" alt="" />
+            <img src={logo} alt="" />
           </a>
         </div>
         <h2>Login</h2>
+
         <form onSubmit={handleSubmit} className="login-form">
-          <label for="email">Email</label>
+          <label htmlFor="email">Email</label>
           <input name="email" type="email" id="email" placeholder="Enter your email" onChange={handleChange} required />
-          <label for="password">Password</label>
-          <input name="password" type="password" id="password "placeholder="Enter your password" onChange={handleChange} required />
+          <label htmlFor="password">Password</label>
+          <input name="password" type="password" id="password" placeholder="Enter your password" onChange={handleChange} required />
           <button type="submit">Login</button>
         </form>
 

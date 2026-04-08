@@ -1,11 +1,10 @@
 import { Link, Links } from "react-router-dom";
 import logo from "../../public/Artboard 1.svg"
 import "../pages/Home.css"
-import bg from "../../public/bg.jpg"
+import bg from "../../public/bg.svg"
 
 const Home = () => {
   return (
-    <>
       <div className="homepage">
         <div className="text-container">
           <div>
@@ -20,10 +19,10 @@ const Home = () => {
         
           <div>
             <Link to="/login">
-              <button>Login</button>
+              <button className="btn-login">Login</button>
             </Link>
             <Link to="/signup">
-            <button>Sign up</button>
+            <button className="btn-signup">Sign up</button>
             </Link>
           </div>
         </div>
@@ -32,7 +31,6 @@ const Home = () => {
           <img src={bg} alt="Career illustration" />
         </div>
       </div>
-    </>
   );
 }
 
