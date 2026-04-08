@@ -10,7 +10,7 @@ const Home = () => {
         <div className="text-container">
           <div>
             <a href="/">
-              <img src={logo} width="350px" alt="" />
+              <img src={logo} alt="" />
             </a>
           </div>
 

@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     font-family: 'Sora', sans-serif;
-    background-color: #ffffff;
+    background-image: url("../../public/auth-bg.jpg");
 }
 
 /* Card */
@@ -15,8 +15,8 @@
     width: 100%;
     max-width: 400px;
     padding: 40px;
-    border-radius:25px;
-    background-color: #b7b7b7;
+    border-radius:15px;
+    background-color: #ffffff;
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
@@ -66,10 +66,10 @@
     cursor: pointer;
     transition: 0.2s ease;
     width: 50%;
-    margin: 10px 25%;
+    margin: 0px 25%;
 }
 
-.signup-form button:hover {
+.signup-form button:hover{
     background-color: #333;
 }
 
@@ -90,12 +90,10 @@
 }
 
 /* Responsive */
-@media (max-width: 500px) {
+@media (max-width: 480px) {
     .signup-card {
         padding: 25px;
+        margin: 0 25px;
     }
 
-    .input-row {
-        flex-direction: column;
-    }
 }

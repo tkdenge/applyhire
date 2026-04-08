@@ -44,7 +44,7 @@ const Signup = () => {
       <div className="signup-card">
         <div>
           <a href="/">
-            <img src={logo} width="250px" alt="" />
+            <img src={logo} width="150px" alt="" />
           </a>
         </div>
         <h2>Sign up</h2>

@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     font-family: 'Sora', sans-serif;
-    background-color: #ffffff;
+    background-image: url("../../public/auth-bg.jpg");
 }
 
 /* Card container */
@@ -15,8 +15,8 @@
     width: 100%;
     max-width: 400px;
     padding: 40px;
-    border-radius: 25px;
-    background-color: #b7b7b7;
+    border-radius: 15px;
+    background-color: #ffffff;
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
@@ -28,7 +28,7 @@
 }
 
 .login-card p {
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     font-size: 0.95rem;
     color: #202020;
 }
@@ -66,7 +66,7 @@
     cursor: pointer;
     transition: 0.2s ease;
     width: 50%;
-    margin: 10px 25%
+    margin: 0px 25%
 }
 
 .login-form button:hover {
@@ -93,6 +93,6 @@
 @media (max-width: 480px) {
     .login-card {
         padding: 25px;
-        margin: 0 15px;
+        margin: 0 25px;
     }
 }

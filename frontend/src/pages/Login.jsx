@@ -41,7 +41,7 @@ const Login = () => {
       <div className="login-card">
         <div>
           <a href="/">
-            <img src={logo} width="250px" alt="" />
+            <img src={logo} width="150px" alt="" />
           </a>
         </div>
         <h2>Login</h2>
