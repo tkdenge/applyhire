@@ -2,8 +2,9 @@ import JobForm from "../components/JobForm";
 import JobList from "../components/JobList";
 import { useEffect, useState } from "react";
 import { getJobs } from "../utils/api";
-import { useNavigate } from "react-router-dom";
-
+import { useNavigate, Link } from "react-router-dom";
+import logo from "../../public/Artboard 1.svg";
+import "../pages/Dashboard.css"
 
 function Dashboard() {
 
@@ -40,15 +41,27 @@ function Dashboard() {
   }, []);
   return (
 
-    <div>
+    <div className="dashboard">
 
-      <h1>Job Dashboard</h1>
+      <div className="dashboard-header">
+        <Link to="/" className="navbar-logo">
+          <img src={logo} alt="logo" />
+        </Link>
 
-      <button onClick={handleLogout}>Logout</button>
+        <button className="logout-btn" onClick={handleLogout}>Logout
+        </button>
+      </div>
 
-      <JobForm refreshJobs={fetchJobs}/>
+      <div className="dashboard-content">
+          <div className="dashboard-card">
+            <JobForm refreshJobs={fetchJobs} />
+          </div>
 
-      <JobList jobs={jobs} refreshJobs={fetchJobs}/>
+          <div className="dashboard-card">
+            <h2>All Jobs</h2>
+            <JobList jobs={jobs} refreshJobs={fetchJobs} />
+          </div>
+      </div>
 
     </div>
 

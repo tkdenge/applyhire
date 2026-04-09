@@ -1,0 +1,43 @@
+
+/* Page */
+.job-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Title */
+.job-form h3 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* Inputs */
+.job-form input {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.job-form input:focus {
+  border-color: var(--primary);
+}
+
+/* Button */
+.job-form button {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.job-form button:hover {
+  background: #333;
+}

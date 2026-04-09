@@ -1,0 +1,82 @@
+
+/* Page */
+.job-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.job-card {
+  padding: 15px;
+  border-radius: var(--radius);
+  background: #cecece;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.job-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.job-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.status.Applied {
+  background: #e5e7eb;
+}
+
+.status.Interview {
+  background: #dbeafe;
+}
+
+.status.Offer {
+  background: #d1fae5;
+}
+
+.status.Rejected {
+  background: #fee2e2;
+}
+
+.job-controls {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.job-controls select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.delete-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #111;
+  color: #fff;
+  font-size: 0.85rem;
+  transition: var(--transition);
+}
+
+.delete-btn:hover {
+  background: #333;
+}
+
+/* Desktop layout */
+@media (min-width: 480px) {
+
+}

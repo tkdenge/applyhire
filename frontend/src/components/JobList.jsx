@@ -1,45 +1,55 @@
 import { deleteJob, updateJob } from "../utils/api";
+import "./JobList.css";
 
 function JobList({ jobs, refreshJobs }) {
 
-  const HandleDeleteJob = async (id) => {
+  const handleDeleteJob = async (id) => {
     await deleteJob(id);
     refreshJobs();
   };
 
   const handleUpdateStatus = async (id, status) => {
-    await updateJob(id,{ status });
+    await updateJob(id, { status });
     refreshJobs();
   };
 
   return (
-    <div>
+    <div className="job-list">
       {Array.isArray(jobs) && jobs.map(job => (
-        <div key={job._id} style={{border:"1px solid black", margin:"10px", padding:"10px"}}>
+
+        
+        <div key={job._id} className="job-card">
 
           <h3>{job.company}</h3>
           <p>{job.role}</p>
-          <p>Status: {job.status}</p>
 
-          <select
-            value={job.status}
-            onChange={(e) =>
-              handleUpdateStatus(job._id, e.target.value)
-            }
-          >
-            <option>Applied</option>
-            <option>Interview</option>
-            <option>Offer</option>
-            <option>Rejected</option>
-          </select>
+          <span className={`status ${job.status}`}>
+            {job.status}
+          </span>
 
-          <br /><br />
+          <div className="job-controls">
+            <select
+              value={job.status}
+              onChange={(e) =>
+                handleUpdateStatus(job._id, e.target.value)
+              }
+            >
+              <option>Applied</option>
+              <option>Interview</option>
+              <option>Offer</option>
+              <option>Rejected</option>
+            </select>
 
-          <button onClick={() => HandleDeleteJob(job._id)}>
-            Delete
-          </button>
+            <button
+              className="delete-btn"
+              onClick={() => handleDeleteJob(job._id)}
+            >
+              Delete
+            </button>
+          </div>
 
         </div>
+
       ))}
     </div>
   );
