@@ -2,9 +2,11 @@ import { Link, Links } from "react-router-dom";
 import logo from "../../public/Artboard 1.svg"
 import "../pages/Home.css"
 import bg from "../../public/bg.svg"
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
+    <>
       <div className="homepage">
         <div className="text-container">
           <div>
@@ -31,6 +33,10 @@ const Home = () => {
           <img src={bg} alt="Career illustration" />
         </div>
       </div>
+      <div className="hompage-footer">
+          <Footer/>
+      </div>
+    </>
   );
 }
 

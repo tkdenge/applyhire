@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../public/Artboard 1.svg"
 import "./Signup.css";
+import Footer from "../components/Footer";
 
 const Signup = () => {
   const [form, setForm] = useState({
@@ -40,30 +41,36 @@ const Signup = () => {
   };
 
   return (
-    <div className="signup-page">
-      <div className="signup-card">
-        <div>
-          <a href="/">
-            <img src={logo} alt="" />
-          </a>
+    <>
+      <div className="signup-page">
+        <div className="signup-card">
+          <div>
+            <a href="/">
+              <img src={logo} alt="" />
+            </a>
+          </div>
+          <h2>Sign up</h2>
+
+          <form onSubmit={handleSubmit} className="signup-form">
+            <label htmlFor="name">First name</label>
+            <input name="name" type="name" placeholder="Enter your first name" id="name" onChange={handleChange} required />
+            <label htmlFor="email">Email</label>
+            <input name="email" type="email" id="email" placeholder="Enter your email" onChange={handleChange} required />
+            <label htmlFor="password">Password</label>
+            <input name="password" type="password" id="password" placeholder="Enter your password" onChange={handleChange} required />
+            <button type="submit">Sign up</button>
+          </form>
+
+          <div className="signup-footer">
+            <p>Already have an account? <Link to="/login">Login</Link> </p>
+          </div>  
         </div>
-        <h2>Sign up</h2>
-
-        <form onSubmit={handleSubmit} className="signup-form">
-          <label htmlFor="name">First name</label>
-          <input name="name" type="name" placeholder="Enter your first name" id="name" onChange={handleChange} required />
-          <label htmlFor="email">Email</label>
-          <input name="email" type="email" id="email" placeholder="Enter your email" onChange={handleChange} required />
-          <label htmlFor="password">Password</label>
-          <input name="password" type="password" id="password" placeholder="Enter your password" onChange={handleChange} required />
-          <button type="submit">Sign up</button>
-        </form>
-
-        <div className="signup-footer">
-          <p>Already have an account? <Link to="/login">Login</Link> </p>
-        </div>  
       </div>
-    </div>
+
+      <div className="signup-footer">
+          <Footer/>
+      </div>
+    </>
   );
 };
 

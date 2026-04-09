@@ -5,6 +5,7 @@ import { getJobs } from "../utils/api";
 import { useNavigate, Link } from "react-router-dom";
 import logo from "../../public/Artboard 1.svg";
 import "../pages/Dashboard.css"
+import Footer from "../components/Footer";
 
 function Dashboard() {
 
@@ -40,31 +41,35 @@ function Dashboard() {
   loadJobs();
   }, []);
   return (
+    <>
+      <div className="dashboard">
 
-    <div className="dashboard">
+        <div className="dashboard-header">
+          <Link to="/" className="navbar-logo">
+            <img src={logo} alt="logo" />
+          </Link>
 
-      <div className="dashboard-header">
-        <Link to="/" className="navbar-logo">
-          <img src={logo} alt="logo" />
-        </Link>
+          <button className="logout-btn" onClick={handleLogout}>Logout
+          </button>
+        </div>
 
-        <button className="logout-btn" onClick={handleLogout}>Logout
-        </button>
+        <div className="dashboard-content">
+            <div className="dashboard-card">
+              <JobForm refreshJobs={fetchJobs} />
+            </div>
+
+            <div className="dashboard-card">
+              <h2>All Jobs</h2>
+              <JobList jobs={jobs} refreshJobs={fetchJobs} />
+            </div>
+        </div>
+
       </div>
 
-      <div className="dashboard-content">
-          <div className="dashboard-card">
-            <JobForm refreshJobs={fetchJobs} />
-          </div>
-
-          <div className="dashboard-card">
-            <h2>All Jobs</h2>
-            <JobList jobs={jobs} refreshJobs={fetchJobs} />
-          </div>
+      <div className="dashboard-footer">
+          <Footer/>
       </div>
-
-    </div>
-
+    </>
   );
 
 }

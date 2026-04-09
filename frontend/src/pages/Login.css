@@ -6,10 +6,8 @@
   justify-content: center;
   align-items: center;
   background: url("/auth-bg.jpg") center/cover no-repeat;
-  
 }
 
-/* Card container */
 .login-card {
   display: flex;
   flex-direction: column;
@@ -28,7 +26,6 @@
   width: 150px;
 }
 
-/* Title */
 .login-card h2 {
   margin:30px 0;
   font-size: 1.8rem;
@@ -39,7 +36,6 @@
   color: #202020;
 }
 
-/* Form */
 .login-form {
   display: flex;
   flex-direction: column;
@@ -47,7 +43,6 @@
   text-align: left;
 }
 
-/* Inputs */
 .login-form input {
   padding: 12px 25px;
   border-radius: 8px;
