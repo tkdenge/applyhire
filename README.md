@@ -2,7 +2,7 @@
 
 ApplyHire is a full-stack job tracking application that helps users manage and monitor their job applications in one place.
 
-https://applyhire.onrender.com/
+**Live Demo:** https://applyhire.onrender.com/
 
 ## Features
 
