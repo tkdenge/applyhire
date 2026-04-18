@@ -1,3 +1,5 @@
+![CI](https://github.com/tkdenge/applyhire/actions/workflows/test.yml/badge.svg)
+
 # ApplyHire - Job Tracker App
 
 ApplyHire is a full-stack job tracking application that helps users manage and monitor their job applications in one place.
