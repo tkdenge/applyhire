@@ -1,12 +1,13 @@
 const express = require("express");
+const app = express();
 const dotenv = require("dotenv");
 const cors = require("cors");
 const jobRoutes = require("./routes/jobRoutes");
 const authRoutes = require("./routes/authRoutes");
 const path = require("path");
+const protectedRoutes = require("./routes/protectedRoutes");
 
 dotenv.config();
-const app = express();
 
 if(process.env.NODE_ENV !== "production") {
   app.use(cors());
@@ -14,8 +15,14 @@ if(process.env.NODE_ENV !== "production") {
 
 app.use(express.json());
 
+// Health check route
+app.get("/", (req, res) => {
+  res.status(200).send("API working");
+})
+
 app.use("/api/auth", authRoutes);
 app.use("/api/jobs", jobRoutes);
+app.use("/api", protectedRoutes);
 
 
 if(process.env.NODE_ENV === "production") {
