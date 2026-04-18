@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/tkdenge/applyhire/issues"
   },
-  "homepage": "https://github.com/tkdenge/applyhire#readme"
+  "homepage": "https://github.com/tkdenge/applyhire#readme",
+  "devDependencies": {
+    "jest": "^30.3.0"
+  }
 }
