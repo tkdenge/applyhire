@@ -13,9 +13,6 @@ describe("Protected Routes", () => {
   beforeAll(async () => {
     console.log("Starting setup...");
 
-    // await User.deleteMany();
-    // console.log("DB cleared");
-
     // register user
     await request(app)
       .post("/api/auth/register")

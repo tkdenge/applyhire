@@ -1,4 +1,4 @@
-import { Link, Links } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../../public/Artboard 1.svg"
 import "../pages/Home.css"
 import bg from "../../public/bg.svg"
