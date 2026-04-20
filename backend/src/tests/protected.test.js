@@ -11,7 +11,6 @@ describe("Protected Routes", () => {
   let token;
 
   beforeAll(async () => {
-    console.log("Starting setup...");
 
     // register user
     await request(app)
@@ -22,21 +21,15 @@ describe("Protected Routes", () => {
         password: "123456"
       });
 
-    console.log("User registered");
-
     // login user
     const res = await request(app)
       .post("/api/auth/login")
       .send({
         email: "marcelo@test.com",
         password: "123456",
-      });
-
-    console.log("Login response:", res.body);  
+      }); 
 
     token = res.body.data.token;
-
-    console.log("Token:", token);
   });
 
   // Failure - No Token
@@ -44,7 +37,7 @@ describe("Protected Routes", () => {
     const res = await request(app).get("/api/profile");
 
     expect(res.statusCode).toBe(401);
-    expect(res.body.message).toBe("No token, not authorized");
+    expect(res.body.message).toBe("No token provided");
   });
 
   // Failure - Invalid token
@@ -54,7 +47,7 @@ describe("Protected Routes", () => {
       .set("Authorization", "Bearer invalidtoken123");
 
     expect(res.statusCode).toBe(401);
-    expect(res.body.message).toBe("Token failed");
+    expect(res.body.message).toBe("Invalid token");
   });
 
   // Success - Valid Token

@@ -18,8 +18,6 @@ describe("Auth - Signup", () => {
       password: "123456"
     });
 
-    console.log("REGISTER RESPONSE:", res.body);
-
     expect(res.statusCode).toBe(201);
     expect(res.body.message).toBe("User created successfully");
     expect(res.body.data.email).toBe("marcelo@test.com");
