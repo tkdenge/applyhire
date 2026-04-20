@@ -12,14 +12,12 @@ exports.createJob = async (req, res) => {
 
   const job = new Job({
     ...req.body,
-    user: req.userId,
+    user: req.userId
   });
 
   const saved = await job.save();
 
   res.status(201).json(saved);
-  console.log(saved);
-
 };
 
 exports.updateJob = async (req, res) => {

@@ -31,8 +31,11 @@ const Signup = () => {
     e.preventDefault();
 
     try {
+      
       const data = await signupUser(form);
-      localStorage.setItem("token", data.token);
+
+      localStorage.setItem("token", data.data.token);
+      
       navigate("/dashboard");
     } catch (err) {
       console.log(err);

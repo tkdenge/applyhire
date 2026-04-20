@@ -20,8 +20,7 @@ function Dashboard() {
 
   const fetchJobs = async () => {
     try {
-      const data = await getJobs(); // data = array of jobs
-      console.log("API response:", data);
+      const data = await getJobs(); 
       setJobs(data); 
     } catch (err) {
       console.error(err);

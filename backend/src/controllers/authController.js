@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken");
 // Generate token
 const generateToken = (id) => {
   return jwt.sign(
-    { userId: id },
+    { id },
     process.env.JWT_SECRET,
     { expiresIn: "1h" }
   );
@@ -28,7 +28,6 @@ exports.registerUser = async (req, res) => {
 
     // Create user
     const user = await User.create({ name, email, password });
-
     
     return res.status(201).json({
       message: "User created successfully",

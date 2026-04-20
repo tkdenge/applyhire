@@ -30,7 +30,9 @@ const Login = () => {
 
     try {
       const data = await loginUser(form);
-      localStorage.setItem("token", data.token);
+      console.log(data)
+      localStorage.setItem("token", data.data.token);
+
       navigate("/dashboard");
     } catch (err) {
       alert(err.response?.data?.message || "Login failed");
