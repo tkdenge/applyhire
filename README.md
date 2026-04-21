@@ -6,6 +6,12 @@ ApplyHire is a full-stack job tracking application that helps users manage and m
 
 **Live Demo:** https://applyhire.onrender.com/
 
+Try the app yourself:
+
+Use the demo account below to explore the website.
+Email: demo@applyhire.com
+Password: demo123
+
 ## Features
 
 * User authentication (Sign up & Login)
