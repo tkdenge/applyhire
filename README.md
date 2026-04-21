@@ -9,8 +9,8 @@ ApplyHire is a full-stack job tracking application that helps users manage and m
 Try the app yourself:
 
 Use the demo account below to explore the website.
--Email: demo@applyhire.com
--Password: demo123
+*Email: demo@applyhire.com
+*Password: demo123
 
 ## Features
 
